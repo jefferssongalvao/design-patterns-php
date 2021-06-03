@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Strategy\Taxes;
 
-use DesignPattern\Strategy\Budget;
+use DesignPattern\Budget;
 
 class IssTax implements Tax
 {
