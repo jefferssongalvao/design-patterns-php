@@ -4,6 +4,7 @@ use DesignPattern\Budget;
 use DesignPattern\ChainOfResponsibility\DiscountCalculator;
 use DesignPattern\Strategy\TaxCalculator;
 use DesignPattern\Strategy\Taxes\IssTax;
+use DesignPattern\TemplateMethod\BrTax;
 
 require "../vendor/autoload.php";
 
@@ -16,4 +17,5 @@ $taxCalculator = new TaxCalculator();
 $discountCalculator = new DiscountCalculator();
 
 echo $taxCalculator->calculate($budget, new IssTax()) . PHP_EOL;
+echo $taxCalculator->calculate($budget, new BrTax()) . PHP_EOL;
 echo $discountCalculator->calculate($budget) . PHP_EOL;
