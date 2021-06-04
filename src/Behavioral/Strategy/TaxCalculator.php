@@ -1,9 +1,9 @@
 <?php
 
-namespace DesignPattern\Strategy;
+namespace DesignPattern\Behavioral\Strategy;
 
+use DesignPattern\Behavioral\Strategy\Taxes\Tax;
 use DesignPattern\Budget;
-use DesignPattern\Strategy\Taxes\Tax;
 
 class TaxCalculator
 {

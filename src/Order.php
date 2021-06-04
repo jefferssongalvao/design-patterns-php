@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern\Behavioral\CommandHandler;
+namespace DesignPattern;
 
 use DesignPattern\Budget;
 

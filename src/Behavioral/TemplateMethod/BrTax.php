@@ -1,9 +1,8 @@
 <?php
 
-namespace DesignPattern\TemplateMethod;
+namespace DesignPattern\Behavioral\TemplateMethod;
 
 use DesignPattern\Budget;
-use DesignPattern\TemplateMethod\Tax\TwoRateTax;
 
 class BrTax extends TwoRateTax
 {

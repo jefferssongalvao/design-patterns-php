@@ -2,9 +2,8 @@
 
 namespace DesignPattern;
 
-use DesignPattern\State\ApprovedState;
-use DesignPattern\State\BudgetState;
-use DesignPattern\State\InApprovalState;
+use DesignPattern\Behavioral\State\BudgetState;
+use DesignPattern\Behavioral\State\InApprovalState;
 
 class Budget
 {

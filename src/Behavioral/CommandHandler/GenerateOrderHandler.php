@@ -3,10 +3,11 @@
 namespace DesignPattern\Behavioral\CommandHandler;
 
 use DesignPattern\Budget;
+use DesignPattern\Order;
 
 class GenerateOrderHandler
 {
-    public function execute(GenerateOrderCommand $generateOrderCommand): void
+    public function execute(GenerateOrderCommand $generateOrderCommand): Order
     {
         $budget = new Budget();
         $budget->items = $generateOrderCommand->getNumberItems();
@@ -16,7 +17,6 @@ class GenerateOrderHandler
         $order->budget = $budget;
         $order->nameClient = $generateOrderCommand->getNameClient();
 
-        echo "Gerar pedido no banco de dados" . PHP_EOL;
-        echo "Enviar pedido por e-mail" . PHP_EOL;
+        return $order;
     }
 }

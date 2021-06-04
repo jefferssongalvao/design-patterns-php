@@ -1,9 +1,8 @@
 <?php
 
-namespace DesignPattern\ChainOfResponsibility\Discounts;
+namespace DesignPattern\Behavioral\ChainOfResponsibility\Discounts;
 
 use DesignPattern\Budget;
-use DesignPattern\ChainOfResponsibility\Discounts\Discount;
 
 class NoDiscount extends Discount 
 {

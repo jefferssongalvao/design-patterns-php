@@ -1,9 +1,8 @@
 <?php
 
-namespace DesignPattern\Strategy\Taxes;
+namespace DesignPattern\Behavioral\Strategy\Taxes;
 
 use DesignPattern\Budget;
-use DesignPattern\Strategy\Taxes\Tax;
 
 class IcmsTax implements Tax
 {

@@ -1,9 +1,8 @@
 <?php
 
-namespace DesignPattern\State;
+namespace DesignPattern\Behavioral\State;
 
 use DesignPattern\Budget;
-use DesignPattern\State\BudgetState;
 use DomainException;
 
 class FinishedState extends BudgetState

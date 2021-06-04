@@ -1,9 +1,9 @@
 <?php
 
-namespace DesignPattern\TemplateMethod\Tax;
+namespace DesignPattern\Behavioral\TemplateMethod;
 
+use DesignPattern\Behavioral\Strategy\Taxes\Tax;
 use DesignPattern\Budget;
-use DesignPattern\Strategy\Taxes\Tax;
 
 abstract class TwoRateTax implements Tax
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern\Strategy\Taxes;
+namespace DesignPattern\Behavioral\Strategy\Taxes;
 
 use DesignPattern\Budget;
 

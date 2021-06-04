@@ -1,9 +1,8 @@
 <?php
 
-namespace DesignPattern\State;
+namespace DesignPattern\Behavioral\State;
 
 use DesignPattern\Budget;
-use DesignPattern\State\BudgetState;
 
 class InApprovalState extends BudgetState
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace DesignPattern\ChainOfResponsibility;
+namespace DesignPattern\Behavioral\ChainOfResponsibility;
 
+use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\DiscountPerItems;
+use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\DiscountPerValue;
+use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\NoDiscount;
 use DesignPattern\Budget;
-use DesignPattern\ChainOfResponsibility\Discounts\DiscountPerItems;
-use DesignPattern\ChainOfResponsibility\Discounts\DiscountPerValue;
-use DesignPattern\ChainOfResponsibility\Discounts\NoDiscount;
 
 class DiscountCalculator
 {

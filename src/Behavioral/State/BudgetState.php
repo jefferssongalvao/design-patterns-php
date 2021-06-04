@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern\State;
+namespace DesignPattern\Behavioral\State;
 
 use DesignPattern\Budget;
 use DomainException;
