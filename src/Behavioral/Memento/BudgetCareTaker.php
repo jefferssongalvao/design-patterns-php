@@ -1,7 +1,6 @@
 <?php
 
 namespace DesignPattern\Behavioral\Memento;
-
 class BudgetCareTaker
 {
     /** @var BudgetMemento[] */
@@ -24,7 +23,7 @@ class BudgetCareTaker
         
         $budgetMemento = end($this->budgetStates);
         unset($this->budgetStates[sizeof($this->budgetStates) - 1]);
-        
+
         return $budgetMemento;
     }
 }
