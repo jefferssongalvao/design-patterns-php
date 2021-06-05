@@ -15,6 +15,10 @@ use DesignPattern\Budget;
 use DesignPattern\Structural\Adapter\Http\CurlHttpAdapter;
 use DesignPattern\Structural\Adapter\Http\ReactPhpHttpAdapter;
 use DesignPattern\Structural\Adapter\RegisterBudget;
+use DesignPattern\Structural\Bridge\Report;
+use DesignPattern\Structural\Bridge\Reports\Content\BudgetExportedContent;
+use DesignPattern\Structural\Bridge\Reports\FileType\XmlFileExported;
+use DesignPattern\Structural\Bridge\Reports\FileType\ZipFileExported;
 
 require "../vendor/autoload.php";
 
@@ -54,3 +58,9 @@ $registerBudget->register($budget);
 
 $registerBudget = new RegisterBudget(new ReactPhpHttpAdapter());
 $registerBudget->register($budget);
+
+$report = new Report(new XmlFileExported("budget"), new BudgetExportedContent($budget));
+echo $report->export();
+
+$report = new Report(new ZipFileExported("budget.serial"), new BudgetExportedContent($budget));
+echo $report->export();
