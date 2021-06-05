@@ -1,6 +1,7 @@
 <?php
 
 use DesignPattern\Behavioral\ChainOfResponsibility\DiscountCalculator;
+use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\NoDiscount;
 use DesignPattern\Behavioral\CommandHandler\GenerateOrderCommand;
 use DesignPattern\Behavioral\CommandHandler\GenerateOrderHandler;
 use DesignPattern\Behavioral\Iterator\BudgetList;
@@ -20,6 +21,7 @@ use DesignPattern\Structural\Bridge\Reports\FileType\XmlFileExported;
 use DesignPattern\Structural\Composite\Budget;
 use DesignPattern\Structural\Composite\BudgetableItem;
 use DesignPattern\Structural\Composite\BudgetItem;
+use DesignPattern\Structural\Facade\DiscountProcess;
 
 require "../vendor/autoload.php";
 
@@ -86,5 +88,6 @@ $budget->addItem($oldBudget);
 
 echo $budget->value();
 
-
 echo "<br />";
+
+(new DiscountProcess($budget))->process(new NoDiscount());
