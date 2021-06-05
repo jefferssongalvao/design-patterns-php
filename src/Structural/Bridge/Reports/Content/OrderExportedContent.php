@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Structural\Bridge\Reports\Content;
 
-use DesignPattern\Order;
+use DesignPattern\Structural\Flyweight\Order;
 
 class OrderExportedContent implements ExportedContent
 {

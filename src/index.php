@@ -22,6 +22,8 @@ use DesignPattern\Structural\Composite\Budget;
 use DesignPattern\Structural\Composite\BudgetableItem;
 use DesignPattern\Structural\Composite\BudgetItem;
 use DesignPattern\Structural\Facade\DiscountProcess;
+use DesignPattern\Structural\Flyweight\ExtrinsicData;
+use DesignPattern\Structural\Flyweight\Order;
 use DesignPattern\Structural\Proxy\BudgetCache;
 
 require "../vendor/autoload.php";
@@ -97,3 +99,17 @@ echo "<br />";
 
 $budgetCache = new BudgetCache($budget);
 echo $budget->value();
+
+echo "<br />";
+
+$orders = [];
+$data = new ExtrinsicData("Jeffersson Galvão");
+
+for($i = 0; $i < 10000; $i++) {
+    $order = new Order();
+    $order->extrinsicData = $data;
+    $order->budget = new Budget();
+    $orders[] = $order;
+}
+
+echo memory_get_peak_usage();

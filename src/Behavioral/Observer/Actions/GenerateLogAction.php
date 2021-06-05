@@ -4,7 +4,7 @@ namespace DesignPattern\Behavioral\Observer\Actions;
 
 
 use DesignPattern\Behavioral\Observer\Actions\Action;
-use DesignPattern\Order;
+use DesignPattern\Structural\Flyweight\Order;
 
 class GenerateLogAction implements Action
 {

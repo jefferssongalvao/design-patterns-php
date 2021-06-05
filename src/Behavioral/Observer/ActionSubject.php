@@ -3,7 +3,7 @@
 namespace DesignPattern\Behavioral\Observer;
 
 use DesignPattern\Behavioral\Observer\Actions\Action;
-use DesignPattern\Order;
+use DesignPattern\Structural\Flyweight\Order;
 
 class ActionSubject
 {

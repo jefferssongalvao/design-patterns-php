@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\Observer\Actions;
 
-use DesignPattern\Order;
+use DesignPattern\Structural\Flyweight\Order;
 
 class SendMailAction implements Action
 {
