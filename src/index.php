@@ -12,6 +12,9 @@ use DesignPattern\Behavioral\Strategy\TaxCalculator;
 use DesignPattern\Behavioral\Strategy\Taxes\IcmsTax;
 use DesignPattern\Behavioral\Strategy\Taxes\IssTax;
 use DesignPattern\Behavioral\TemplateMethod\BrTax;
+use DesignPattern\Creational\AbstractFactory\Factory\ProductSaleFactory;
+use DesignPattern\Creational\AbstractFactory\Factory\ServiceSaleFactory;
+use DesignPattern\Creational\AbstractFactory\SaleGenerator;
 use DesignPattern\Creational\FactoryMethod\LogGenerator;
 use DesignPattern\Creational\FactoryMethod\Manager\FileLogManager;
 use DesignPattern\Creational\FactoryMethod\Manager\StdoutLogManager;
@@ -126,3 +129,11 @@ $logGenerator = new LogGenerator(
     "Testando o log"
 );
 $logGenerator->generateLog();
+
+echo "<br />";
+
+$saleGenerator = new SaleGenerator(new ProductSaleFactory(1000));
+$saleGenerator->generateSale();
+
+$saleGenerator = new SaleGenerator(new ServiceSaleFactory("Jeffersson"));
+$saleGenerator->generateSale();
