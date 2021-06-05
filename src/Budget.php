@@ -16,22 +16,22 @@ class Budget
         $this->actualState = new InApprovalState();
     }
 
-    public function applyExtraDiscount(Budget $budget): void
+    public function applyExtraDiscount(): void
     {
         $this->valor -= $this->actualState->calculateExtraDiscount($this);
     }
 
-    public function approves(Budget $budget): void
+    public function approves(): void
     {
         $this->actualState->approves($this);
     }
 
-    public function reproves(Budget $budget): void
+    public function reproves(): void
     {
         $this->actualState->reproves($this);
     }
 
-    public function finish(Budget $budget): void
+    public function finish(): void
     {
         $this->actualState->finish($this);
     }
