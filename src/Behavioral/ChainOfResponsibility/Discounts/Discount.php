@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\ChainOfResponsibility\Discounts;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 abstract class Discount
 {
@@ -13,6 +13,5 @@ abstract class Discount
         $this->nextDiscount = $discount;
     }
 
-    abstract public function calculateDiscount(Budget $budget): float;
-    
+    abstract public function calculateDiscount(Budget $budget): float;    
 }

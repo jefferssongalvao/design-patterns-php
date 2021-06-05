@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Structural\Decorator;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 abstract class Tax
 {

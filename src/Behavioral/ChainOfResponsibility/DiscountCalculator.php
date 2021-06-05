@@ -5,7 +5,7 @@ namespace DesignPattern\Behavioral\ChainOfResponsibility;
 use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\DiscountPerItems;
 use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\DiscountPerValue;
 use DesignPattern\Behavioral\ChainOfResponsibility\Discounts\NoDiscount;
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 class DiscountCalculator
 {

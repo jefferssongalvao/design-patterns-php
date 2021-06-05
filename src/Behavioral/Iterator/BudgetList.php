@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\Iterator;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 class BudgetList implements \IteratorAggregate
 {

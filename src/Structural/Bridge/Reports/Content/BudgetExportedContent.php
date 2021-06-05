@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Structural\Bridge\Reports\Content;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 class BudgetExportedContent implements ExportedContent
 {

@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\State;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 use DomainException;
 
 abstract class BudgetState

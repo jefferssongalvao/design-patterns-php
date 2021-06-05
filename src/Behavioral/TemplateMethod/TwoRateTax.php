@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\TemplateMethod;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 use DesignPattern\Structural\Decorator\Tax;
 
 abstract class TwoRateTax extends Tax

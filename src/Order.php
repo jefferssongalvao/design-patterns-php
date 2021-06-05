@@ -2,7 +2,7 @@
 
 namespace DesignPattern;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 class Order
 {

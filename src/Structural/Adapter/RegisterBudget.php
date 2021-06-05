@@ -3,8 +3,8 @@
 namespace DesignPattern\Structural\Adapter;
 
 use DesignPattern\Behavioral\State\FinishedState;
-use DesignPattern\Budget;
 use DesignPattern\Structural\Adapter\Http\HttpAdapter;
+use DesignPattern\Structural\Composite\Budget;
 use DomainException;
 
 class RegisterBudget
@@ -23,8 +23,7 @@ class RegisterBudget
         $this->http->post(
             "http://api.registra.com",
             [
-                'value' => $budget->value,
-                'items' => $budget->items
+                'value' => $budget->value
             ]
         );
     }

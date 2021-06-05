@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\TemplateMethod;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 class BrTax extends TwoRateTax
 {

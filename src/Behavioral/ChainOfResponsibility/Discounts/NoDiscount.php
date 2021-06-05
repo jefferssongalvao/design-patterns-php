@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\ChainOfResponsibility\Discounts;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 
 class NoDiscount extends Discount 
 {

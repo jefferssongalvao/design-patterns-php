@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Behavioral\Strategy\Taxes;
 
-use DesignPattern\Budget;
+use DesignPattern\Structural\Composite\Budget;
 use DesignPattern\Structural\Decorator\Tax;
 
 class IssTax extends Tax
