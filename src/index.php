@@ -18,7 +18,6 @@ use DesignPattern\Structural\Adapter\RegisterBudget;
 use DesignPattern\Structural\Bridge\Report;
 use DesignPattern\Structural\Bridge\Reports\Content\BudgetExportedContent;
 use DesignPattern\Structural\Bridge\Reports\FileType\XmlFileExported;
-use DesignPattern\Structural\Bridge\Reports\FileType\ZipFileExported;
 
 require "../vendor/autoload.php";
 
@@ -31,6 +30,7 @@ $discountCalculator = new DiscountCalculator();
 
 echo $taxCalculator->calculate($budget, new IcmsTax()) . PHP_EOL;
 echo $taxCalculator->calculate($budget, new IssTax()) . PHP_EOL;
+echo $taxCalculator->calculate($budget, new IcmsTax(new IssTax())) . PHP_EOL;
 echo $taxCalculator->calculate($budget, new BrTax()) . PHP_EOL;
 echo $discountCalculator->calculate($budget) . PHP_EOL;
 
@@ -60,7 +60,4 @@ $registerBudget = new RegisterBudget(new ReactPhpHttpAdapter());
 $registerBudget->register($budget);
 
 $report = new Report(new XmlFileExported("budget"), new BudgetExportedContent($budget));
-echo $report->export();
-
-$report = new Report(new ZipFileExported("budget.serial"), new BudgetExportedContent($budget));
 echo $report->export();

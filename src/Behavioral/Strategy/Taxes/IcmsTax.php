@@ -3,10 +3,11 @@
 namespace DesignPattern\Behavioral\Strategy\Taxes;
 
 use DesignPattern\Budget;
+use DesignPattern\Structural\Decorator\Tax;
 
-class IcmsTax implements Tax
+class IcmsTax extends Tax
 {
-    public function taxCalculation(Budget $budget): float
+    public function taxSpecificCalculation(Budget $budget): float
     {
         return $budget->value * 0.1;
     }

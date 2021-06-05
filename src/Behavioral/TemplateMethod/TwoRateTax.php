@@ -2,12 +2,12 @@
 
 namespace DesignPattern\Behavioral\TemplateMethod;
 
-use DesignPattern\Behavioral\Strategy\Taxes\Tax;
 use DesignPattern\Budget;
+use DesignPattern\Structural\Decorator\Tax;
 
-abstract class TwoRateTax implements Tax
+abstract class TwoRateTax extends Tax
 {
-    public function taxCalculation(Budget $budget): float
+    public function taxSpecificCalculation(Budget $budget): float
     {
         if($this->shouldApplyMaxFee($budget)) {
             return $this->applyMaxFee($budget);
