@@ -2,7 +2,7 @@
 
 namespace DesignPattern\Structural\Flyweight;
 
-class ExtrinsicData
+class TemplateOrder
 {
     private string $nameClient;
 

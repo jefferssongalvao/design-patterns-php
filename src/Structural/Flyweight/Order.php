@@ -7,5 +7,5 @@ use DesignPattern\Structural\Composite\Budget;
 class Order
 {
     public Budget $budget;
-    public ExtrinsicData $extrinsicData;
+    public TemplateOrder $templateOrder;
 }

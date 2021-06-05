@@ -2,8 +2,8 @@
 
 namespace DesignPattern\Behavioral\CommandHandler;
 use DesignPattern\Structural\Composite\Budget;
-use DesignPattern\Structural\Flyweight\ExtrinsicData;
 use DesignPattern\Structural\Flyweight\Order;
+use DesignPattern\Structural\Flyweight\TemplateOrder;
 
 class GenerateOrderHandler
 {
@@ -14,7 +14,7 @@ class GenerateOrderHandler
 
         $order = new Order();
         $order->budget = $budget;
-        $order->extrinsicData = new ExtrinsicData($generateOrderCommand->getNameClient());
+        $order->templateOrder = new TemplateOrder($generateOrderCommand->getNameClient());
 
         return $order;
     }

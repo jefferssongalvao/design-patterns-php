@@ -19,11 +19,11 @@ use DesignPattern\Structural\Bridge\Report;
 use DesignPattern\Structural\Bridge\Reports\Content\BudgetExportedContent;
 use DesignPattern\Structural\Bridge\Reports\FileType\XmlFileExported;
 use DesignPattern\Structural\Composite\Budget;
-use DesignPattern\Structural\Composite\BudgetableItem;
 use DesignPattern\Structural\Composite\BudgetItem;
 use DesignPattern\Structural\Facade\DiscountProcess;
-use DesignPattern\Structural\Flyweight\ExtrinsicData;
 use DesignPattern\Structural\Flyweight\Order;
+use DesignPattern\Structural\Flyweight\OrderMaker;
+use DesignPattern\Structural\Flyweight\TemplateOrder;
 use DesignPattern\Structural\Proxy\BudgetCache;
 
 require "../vendor/autoload.php";
@@ -103,12 +103,13 @@ echo $budget->value();
 echo "<br />";
 
 $orders = [];
-$data = new ExtrinsicData("Jeffersson Galvão");
+$orderMaker = new OrderMaker();
 
 for($i = 0; $i < 10000; $i++) {
-    $order = new Order();
-    $order->extrinsicData = $data;
-    $order->budget = new Budget();
+    $order = $orderMaker->createOrder(
+        "Jeffersson Galvão",
+        new Budget()
+    );
     $orders[] = $order;
 }
 
