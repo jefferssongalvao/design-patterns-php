@@ -12,6 +12,9 @@ use DesignPattern\Behavioral\Strategy\TaxCalculator;
 use DesignPattern\Behavioral\Strategy\Taxes\IcmsTax;
 use DesignPattern\Behavioral\Strategy\Taxes\IssTax;
 use DesignPattern\Behavioral\TemplateMethod\BrTax;
+use DesignPattern\Creational\FactoryMethod\LogGenerator;
+use DesignPattern\Creational\FactoryMethod\Manager\FileLogManager;
+use DesignPattern\Creational\FactoryMethod\Manager\StdoutLogManager;
 use DesignPattern\Structural\Adapter\Http\CurlHttpAdapter;
 use DesignPattern\Structural\Adapter\Http\ReactPhpHttpAdapter;
 use DesignPattern\Structural\Adapter\RegisterBudget;
@@ -114,3 +117,12 @@ for($i = 0; $i < 10000; $i++) {
 }
 
 echo memory_get_peak_usage();
+
+echo "<br />";
+
+$logGenerator = new LogGenerator(
+    new StdoutLogManager(),
+    "info",
+    "Testando o log"
+);
+$logGenerator->generateLog();
