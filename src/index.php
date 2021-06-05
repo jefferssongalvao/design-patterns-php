@@ -22,6 +22,7 @@ use DesignPattern\Structural\Composite\Budget;
 use DesignPattern\Structural\Composite\BudgetableItem;
 use DesignPattern\Structural\Composite\BudgetItem;
 use DesignPattern\Structural\Facade\DiscountProcess;
+use DesignPattern\Structural\Proxy\BudgetCache;
 
 require "../vendor/autoload.php";
 
@@ -91,3 +92,8 @@ echo $budget->value();
 echo "<br />";
 
 (new DiscountProcess($budget))->process(new NoDiscount());
+
+echo "<br />";
+
+$budgetCache = new BudgetCache($budget);
+echo $budget->value();
