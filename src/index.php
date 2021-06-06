@@ -15,8 +15,9 @@ use DesignPattern\Behavioral\TemplateMethod\BrTax;
 use DesignPattern\Creational\AbstractFactory\Factory\ProductSaleFactory;
 use DesignPattern\Creational\AbstractFactory\Factory\ServiceSaleFactory;
 use DesignPattern\Creational\AbstractFactory\SaleGenerator;
+use DesignPattern\Creational\Builder\InvoiceGenerator;
+use DesignPattern\Creational\Builder\Invoices\ServiceInvoiceBuilder;
 use DesignPattern\Creational\FactoryMethod\LogGenerator;
-use DesignPattern\Creational\FactoryMethod\Manager\FileLogManager;
 use DesignPattern\Creational\FactoryMethod\Manager\StdoutLogManager;
 use DesignPattern\Structural\Adapter\Http\CurlHttpAdapter;
 use DesignPattern\Structural\Adapter\Http\ReactPhpHttpAdapter;
@@ -27,9 +28,7 @@ use DesignPattern\Structural\Bridge\Reports\FileType\XmlFileExported;
 use DesignPattern\Structural\Composite\Budget;
 use DesignPattern\Structural\Composite\BudgetItem;
 use DesignPattern\Structural\Facade\DiscountProcess;
-use DesignPattern\Structural\Flyweight\Order;
 use DesignPattern\Structural\Flyweight\OrderMaker;
-use DesignPattern\Structural\Flyweight\TemplateOrder;
 use DesignPattern\Structural\Proxy\BudgetCache;
 
 require "../vendor/autoload.php";
@@ -137,3 +136,9 @@ $saleGenerator->generateSale();
 
 $saleGenerator = new SaleGenerator(new ServiceSaleFactory("Jeffersson"));
 $saleGenerator->generateSale();
+
+echo "<br />";
+
+$invoiceGenerator = new InvoiceGenerator(new ServiceInvoiceBuilder());
+$invoice = $invoiceGenerator->generateInvoice();
+echo $invoice->value();
