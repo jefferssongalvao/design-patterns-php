@@ -45,7 +45,7 @@ echo $taxCalculator->calculate($budget, new IcmsTax(new IssTax())) . PHP_EOL;
 echo $taxCalculator->calculate($budget, new BrTax()) . PHP_EOL;
 echo $discountCalculator->calculate($budget) . PHP_EOL;
 
-echo "<br />";
+echo "<br /><br />";
 
 $order = (new GenerateOrderHandler)->execute(
     new GenerateOrderCommand(10, 500, "Joseph Climber")
@@ -63,7 +63,7 @@ foreach ($budgetList as $budgetItem) {
     echo "Valor:" . $budgetItem->value . PHP_EOL;
 }
 
-echo "<br />";
+echo "<br /><br />";
 
 $budget->finish();
 
@@ -76,7 +76,7 @@ $registerBudget->register($budget);
 $report = new Report(new XmlFileExported("budget"), new BudgetExportedContent($budget));
 echo $report->export();
 
-echo "<br />";
+echo "<br /><br />";
 
 $budget = new Budget();
 
@@ -96,16 +96,16 @@ $budget->addItem($oldBudget);
 
 echo $budget->value();
 
-echo "<br />";
+echo "<br /><br />";
 
 (new DiscountProcess($budget))->process(new NoDiscount());
 
-echo "<br />";
+echo "<br /><br />";
 
 $budgetCache = new BudgetCache($budget);
 echo $budget->value();
 
-echo "<br />";
+echo "<br /><br />";
 
 $orders = [];
 $orderMaker = new OrderMaker();
@@ -120,7 +120,7 @@ for($i = 0; $i < 10000; $i++) {
 
 echo memory_get_peak_usage();
 
-echo "<br />";
+echo "<br /><br />";
 
 $logGenerator = new LogGenerator(
     new StdoutLogManager(),
@@ -129,7 +129,7 @@ $logGenerator = new LogGenerator(
 );
 $logGenerator->generateLog();
 
-echo "<br />";
+echo "<br /><br />";
 
 $saleGenerator = new SaleGenerator(new ProductSaleFactory(1000));
 $saleGenerator->generateSale();
@@ -137,8 +137,16 @@ $saleGenerator->generateSale();
 $saleGenerator = new SaleGenerator(new ServiceSaleFactory("Jeffersson"));
 $saleGenerator->generateSale();
 
-echo "<br />";
+echo "<br /><br />";
 
 $invoiceGenerator = new InvoiceGenerator(new ServiceInvoiceBuilder());
 $invoice = $invoiceGenerator->generateInvoice();
 echo $invoice->value();
+
+echo "<br /><br />";
+
+$invoiceClone = clone $invoice;
+
+echo "<pre>";
+var_dump($invoice, $invoiceClone);
+echo "</pre>";

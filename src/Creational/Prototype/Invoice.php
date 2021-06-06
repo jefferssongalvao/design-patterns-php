@@ -1,7 +1,8 @@
 <?php
 
-namespace DesignPattern\Creational\Builder\Invoices;
+namespace DesignPattern\Creational\Prototype;
 
+use DateTimeImmutable;
 use DateTimeInterface;
 use DesignPattern\Structural\Composite\BudgetItem;
 
@@ -21,5 +22,10 @@ class Invoice
             fn(float $total, BudgetItem $item) => $total + $item->value(),
             0
         );
+    }
+
+    public function __clone()
+    {
+        $this->issueDate = new DateTimeImmutable();
     }
 }

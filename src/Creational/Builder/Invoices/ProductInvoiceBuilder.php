@@ -2,6 +2,8 @@
 
 namespace DesignPattern\Creational\Builder\Invoices;
 
+use DesignPattern\Creational\Prototype\Invoice;
+
 class ProductInvoiceBuilder extends InvoiceBuilder
 {
     function build(): Invoice

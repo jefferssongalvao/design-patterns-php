@@ -2,8 +2,8 @@
 
 namespace DesignPattern\Creational\Builder;
 
-use DesignPattern\Creational\Builder\Invoices\Invoice;
 use DesignPattern\Creational\Builder\Invoices\InvoiceBuilder;
+use DesignPattern\Creational\Prototype\Invoice;
 use DesignPattern\Structural\Composite\BudgetItem;
 
 class InvoiceGenerator
