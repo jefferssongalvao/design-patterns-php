@@ -19,6 +19,7 @@ use DesignPattern\Creational\Builder\InvoiceGenerator;
 use DesignPattern\Creational\Builder\Invoices\ServiceInvoiceBuilder;
 use DesignPattern\Creational\FactoryMethod\LogGenerator;
 use DesignPattern\Creational\FactoryMethod\Manager\StdoutLogManager;
+use DesignPattern\Creational\Singleton\PdoConnection;
 use DesignPattern\Structural\Adapter\Http\CurlHttpAdapter;
 use DesignPattern\Structural\Adapter\Http\ReactPhpHttpAdapter;
 use DesignPattern\Structural\Adapter\RegisterBudget;
@@ -149,4 +150,12 @@ $invoiceClone = clone $invoice;
 
 echo "<pre>";
 var_dump($invoice, $invoiceClone);
+echo "</pre>";
+
+echo "<br /><br />";
+$pdo1 = PdoConnection::getInstance("sqlite::memory:");
+$pdo2 = PdoConnection::getInstance("sqlite::memory:");
+
+echo "<pre>";
+var_dump($pdo1, $pdo2);
 echo "</pre>";
